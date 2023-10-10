@@ -241,11 +241,16 @@
         newRow.appendChild(newData4);
       };
       addRow();
+
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
-
-      const hideAllImages = function () {};
+      const imgOnClick = document.querySelector("img");
+      const hideAllImages = function () {
+        const images = document.querySelector("img");
+        images.style.display = "none";
+      };
+      imgOnClick.onclick = hideAllImages;
 
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
