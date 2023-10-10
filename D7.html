@@ -172,13 +172,20 @@
          Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
         */
 
-      const makeItClickable = function () {
-        const titleCharArray = Array.from(title.innerText);
-        titleCharArray.pop();
-        let newTitle = titleCharArray.join("");
-        title.innerText = newTitle;
-      };
+      //Metodo con array
 
+      // const makeItClickable = function () {
+      //   const titleCharArray = Array.from(title.innerText);
+      //   titleCharArray.pop();
+      //   let newTitle = titleCharArray.join("");
+      //   title.innerText = newTitle;
+      // };
+      // title.onclick = makeItClickable;
+
+      const makeItClickable = function () {
+        let newTitleText = title.innerText.slice(0, -1);
+        title.innerText = newTitleText;
+      };
       title.onclick = makeItClickable;
 
       /* ESERCIZIO 10
@@ -198,8 +205,12 @@
          Crea una funzione che crei una tabella nell'elemento con id "tableArea".
          La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
       */
-
-      const generateTable = function () {};
+      const tableStructure = document.getElementById("tableArea");
+      const generateTable = function () {
+        tableStructure.innerHTML =
+          "<table><tr><td><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fit%2Ffoto%2Fcomputer-desktop-gm96225501-6396720&psig=AOvVaw2c13_tU9NuSQq-XYCpnZjg&ust=1697035992626000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDnpe7d64EDFQAAAAAdAAAAABAE' height=100px width = 100px;/></td><td>nome prodotto</td><td>quantità</td><td>prezzo</td></tr></table>";
+      };
+      generateTable();
 
       /* ESERCIZIO 12
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
