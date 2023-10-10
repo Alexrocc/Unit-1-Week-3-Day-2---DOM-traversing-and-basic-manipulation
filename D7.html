@@ -208,7 +208,7 @@
       const tableStructure = document.getElementById("tableArea");
       const generateTable = function () {
         tableStructure.innerHTML =
-          "<table><tr><td><img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fit%2Ffoto%2Fcomputer-desktop-gm96225501-6396720&psig=AOvVaw2c13_tU9NuSQq-XYCpnZjg&ust=1697035992626000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDnpe7d64EDFQAAAAAdAAAAABAE' height=100px width = 100px;/></td><td>nome prodotto</td><td>quantità</td><td>prezzo</td></tr></table>";
+          "<table><tbody><tr><th>immagine</th><th>nome prodotto</th><th>quantità</th><th>prezzo</th></tr></tbody></table>";
       };
       generateTable();
 
@@ -216,8 +216,31 @@
          Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
       */
 
-      const addRow = function () {};
+      const addRow = function () {
+        const tableBody = document.querySelector("tbody");
+        const newRow = document.createElement("tr");
+        const newData1 = document.createElement("td");
+        const newData2 = document.createElement("td");
+        const newData3 = document.createElement("td");
+        const newData4 = document.createElement("td");
+        const newImg = document.createElement("img");
 
+        newImg.src =
+          "https://media.istockphoto.com/id/1183337149/it/foto/visualizzazione-computer-con-schermo-bianco-vuoto-n-monitor-computer-isolato-su-sfondo-bianco.jpg?s=1024x1024&w=is&k=20&c=3qUhh2mCihqai7mnzl__hkN4qQQPPcC1Ph0kGF7d8K0=";
+        newImg.style = "height : 100px; width : 150px";
+
+        newData2.innerText = "Prodotto 1";
+        newData3.innerText = "320";
+        newData4.innerText = "250€";
+
+        tableBody.appendChild(newRow);
+        newRow.appendChild(newData1);
+        newData1.appendChild(newImg);
+        newRow.appendChild(newData2);
+        newRow.appendChild(newData3);
+        newRow.appendChild(newData4);
+      };
+      addRow();
       /* ESERCIZIO 14
         Crea una funzione che nasconda le immagini della tabella quando eseguita
       */
